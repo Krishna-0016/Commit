@@ -1,0 +1,336 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
+:root {
+    /* Color */
+    --Black: #141414;
+    --Dark_Grey: #474D6A;
+    --Light_Grey: #F2F1F5;
+    --Grey: #7F7F7F;
+    --Light_Blue: #63AEF1;
+    --Blue: #0544DA;
+    --White: #FEFEFE;
+    --Red: #F04141;
+    --Dark_Gradient: linear-gradient(96deg, #62AEF1 0%, #0544DA 100%);
+    --Light_Gradient: linear-gradient(104deg, #E9F4FF 0%, #D0DEFF 100%);
+
+    /* Font Size */
+    --Small_Text: 14px;
+    --Text: 16px;
+    --Heading-Text: 24px;
+    --Sub-Heading: 40px;
+    --Heading: 64px;
+
+    /* Font Weight */
+    --Regular: 500;
+    --Medium: 600;
+    --Semi: 700;
+
+    --Border-Radius: 20px;
+    --Box-Shadow: drop-shadow(0px 8px 24px rgba(97, 91, 91, 0.10));
+}
+
+body {
+    background: var(--white);
+    box-sizing: border-box;
+}
+
+/* Scroll Bar */
+body::-webkit-scrollbar {
+    width: 0.65em;
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--Dark_Gradient);
+    border-radius: 30px;
+}
+
+
+h1 {
+    color: var(--Black);
+    font-size: var(--Heading);
+    font-weight: var(--Semi);
+    line-height: 72px;
+    leading-trim: both;
+}
+
+h2 {
+    color: var(--Dark_Grey);
+    font-weight: var(--Semi);
+    font-size: var(--Sub-Heading);
+    line-height: 54px;
+    leading-trim: both;
+    text-edge: cap;
+}
+
+p {
+    color: var(--Grey);
+    font-size: var(--Text);
+    font-weight: var(--Regular);
+    line-height: 30px;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+
+}
+
+select:after {
+    content: '<>';
+    font: 17px "Consolas", monospace;
+    color: #333;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 11px;
+    /*Adjust for position however you want*/
+
+    top: 18px;
+    padding: 0 0 2px;
+    border-bottom: 1px solid #999;
+    /*left line */
+
+    position: absolute;
+    pointer-events: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.Gradient_Text {
+    background: var(--Dark_Gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Gradient_Background {
+    background: var(--Dark_Gradient);
+}
+
+.Light_Gradient_Background {
+    background: var(--Light_Gradient);
+}
+
+
+/* Button Css */
+.Gradient_Button {
+    display: flex;
+    padding: 12px 40px;
+    justify-content: center;
+    align-items: center;
+    background: var(--Dark_Gradient);
+    border-radius: 60px;
+    font-weight: var(--Regular);
+    font-size: var(--Text);
+    color: var(--White);
+    gap: 10px;
+    transition: ease-out 0.2s all;
+}
+
+.Gradient_Button:hover {
+    transition: ease-in-out 0.3s all;
+    background: linear-gradient(96deg, #8FBBE1 0%, #2F69F3 100%);
+    box-shadow: 0px 4px 15px 0px rgba(99, 175, 241, 0.15);
+    transform: scale(1.1);
+}
+
+.Gradient_Outline {
+    background: var(--Dark_Gradient);
+    transition: ease-out 0.3s all;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    padding: 12px 40px;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 0;
+    text-decoration: none;
+}
+
+.Gradient_Outline::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    border: 2px solid transparent;
+    border-radius: 60px;
+    background: inherit;
+    background-origin: border-box;
+    background-clip: border-box;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    -webkit-mask-repeat: no-repeat;
+}
+
+.Gradient_Outline:hover {
+    color: #fff;
+    -webkit-text-fill-color: #fff;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    transition: ease-in-out 0.3s all;
+    transform: scale(1.1);
+    box-shadow: 0px 4px 15px 0px rgba(99, 175, 241, 0.15);
+}
+
+.Gradient_Outline:hover::before {
+    -webkit-mask: none;
+}
+
+
+/* Some Classes */
+.Inner_Container {
+    @apply lg:w-[1024px] max-lg:w-full max-lg:p-[20px]
+}
+
+.Center {
+    @apply flex items-center justify-center
+}
+
+.Nav_Links {
+    position: relative;
+    cursor: pointer;
+}
+
+.Nav_Links:after {
+    display: block;
+    content: '';
+    border-bottom: 3px solid transparent;
+    border-image: var(--Dark_Gradient);
+    border-image-slice: 1;
+    transform: scaleX(0);
+    transition: transform 0.15s ease-in-out;
+}
+
+.Nav_Links:hover:after {
+    transform: scaleX(1);
+}
+
+.Landing_Section {
+    background-image: url('./assets/Star.svg'), url('./assets/Star.svg'), url('./assets/Star.svg'), url('./assets/Arrow.svg');
+    background-position: 50% 35%, 60% 15%, 100% 20%, center center;
+    background-size: 40px, 20px, 20px, 7%;
+    background-repeat: no-repeat;
+}
+
+.Overview_Background {
+    background-image: url('./assets/Overview_Background.svg'), url('./assets/Star.svg'), url('./assets/Star.svg'), url('./assets/Star.svg');
+    background-repeat: no-repeat;
+    background-size: auto, 40px, 20px, 30px;
+    background-position: top right, center bottom, 10% 90%, 50% 5%;
+}
+
+.Leaders {
+    background-image: url('./assets/Star.svg'), url('./assets/Star.svg'), url('./assets/Star.svg');
+    background-position: 10% 35%, 30% 95%, 95% 65%;
+    background-size: 40px, 20px, 20px;
+    background-repeat: no-repeat;
+}
+
+.Content {
+    transition: ease-out 0.3s all;
+}
+
+.Content:hover h3 {
+    border-left: 4px solid transparent;
+    border-image: var(--Dark_Gradient);
+    border-image-slice: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+.Content:hover p {
+    color: var(--Dark_Grey);
+    transition: all 0.2s ease-in-out;
+}
+
+.Content:hover img {
+    color: var(--Dark_Grey);
+    transform: scale(1.2);
+    transition: all 0.2s ease-in-out;
+}
+
+.Jobs {
+    background-image: url('./assets/Star.svg'), url('./assets/Star.svg'), url('./assets/Star.svg'), url('./assets/Arrow.svg');
+    background-position: 70% 0%, 60% 25%, 90% 100%, 50% 10%;
+    background-size: 40px, 20px, 20px, 7%;
+    background-repeat: no-repeat;
+}
+
+.Gallery {
+    background-image: url('./assets/Star.svg'), url('./assets/Star.svg'), url('./assets/Star.svg');
+    background-position: 0% 0% , 30% 95%, 90% 10%;
+    background-size: 40px, 20px, 20px;
+    background-repeat: no-repeat;
+}
+
+.Footer {
+    background-image: url('./assets/Footer_Background.svg');
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+.Footer_Icons:hover {
+    transition: ease-in-out 0.3s all;
+    transform: scale(1.1);
+}
+
+
+
+@media screen and (max-width:1024px) {
+
+    .Landing_Section {
+        background-position: 5% 35%, 10% 15%, 90% 35%, 90% 35%;
+        background-size: 40px, 20px, 20px, 50px;
+    }
+
+    .Card:nth-child(odd){
+        display: none;
+    }
+
+    h1 {
+        font-size: 32px;
+        line-height: 46px;
+    }
+
+    h2 {
+        font-size: 28px;
+        line-height: 40px;
+    }
+
+    .Gradient_Outline {
+        padding: 10px 20px;
+        font-size: var(--Small_Text);
+    }
+
+    .Gradient_Button {
+        padding: 10px 20px;
+        font-size: var(--Small_Text);
+    }
+
+    .Overview_Background {
+        background-image: none;
+        background-image: url('./assets/Star.svg'), url('./assets/Star.svg'), url('./assets/Star.svg');
+        background-position: 15% 5%, 95% 55%, 85% 75%;
+    }
+
+}

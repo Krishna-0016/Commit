@@ -1,0 +1,31 @@
+<svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_615_112)">
+<circle cx="44" cy="36" r="20" fill="url(#paint0_linear_615_112)"/>
+</g>
+<g clip-path="url(#clip0_615_112)">
+<path d="M54 42V27H34V42H32V44H56V42H54ZM46 42H42V41H46V42ZM52 39H36V29H52V39Z" fill="url(#paint1_linear_615_112)"/>
+</g>
+<defs>
+<filter id="filter0_d_615_112" x="0" y="0" width="88" height="88" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="8"/>
+<feGaussianBlur stdDeviation="12"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.381667 0 0 0 0 0.357494 0 0 0 0 0.357494 0 0 0 0.1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_615_112"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_615_112" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_615_112" x1="24" y1="16" x2="71.1074" y2="27.9259" gradientUnits="userSpaceOnUse">
+<stop stop-color="#E9F4FF"/>
+<stop offset="1" stop-color="#D0DEFF"/>
+</linearGradient>
+<linearGradient id="paint1_linear_615_112" x1="32" y1="27" x2="57.6685" y2="30.0758" gradientUnits="userSpaceOnUse">
+<stop stop-color="#62AEF1"/>
+<stop offset="1" stop-color="#0544DA"/>
+</linearGradient>
+<clipPath id="clip0_615_112">
+<rect width="24" height="24" fill="white" transform="translate(32 24)"/>
+</clipPath>
+</defs>
+</svg>
